@@ -1,0 +1,11 @@
+<view class='nav-wrap' style='height: {{height*2 + 20}}px;'>
+  <view  style='line-height: {{height*2 + 44}}px;' class='nav-title'>{{"讨论组-" + navbarData.title}}</view>
+  <view style='display: flex; justify-content: space-around;flex-direction: column'>
+
+    <view class='nav-capsule' style='height: {{height*2 + 44}}px;' wx:if='{{navbarData.showCapsule}}'>
+      <view bindtap='_showBadge'>
+        <image src='/imgs/icon/badge.svg' mode='aspectFill' class='show-badge'></image>
+      </view>
+    </view>
+  </view>
+</view>

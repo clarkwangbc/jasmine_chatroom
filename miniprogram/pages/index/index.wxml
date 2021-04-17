@@ -1,0 +1,54 @@
+<!--显示登陆用户的头像和昵称-->
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
+
+<view class="container">
+    <!-- 组别类型一 -->
+    <view class="uploader">
+    <navigator url="../group_input/group_input" open-type="navigate" class="uploader-text">
+      <text>组别：类型一</text>
+    </navigator>
+  </view>
+
+
+  <!-- 组别类型二 -->
+  <view class="uploader">
+    <navigator url="../group_input/group_input" open-type="navigate" class="uploader-text">
+      <text>组别：类型二</text>
+    </navigator>
+  </view>
+
+  <!-- 组别类型三 -->
+  <view class="uploader">
+    <navigator url="../group_input/group_input" open-type="navigate" class="uploader-text">
+      <text>组别：类型三</text>
+    </navigator>
+  </view>
+
+  <!-- 组别类型四 -->
+  <view class="uploader">
+    <navigator url="../group_input/group_input" open-type="navigate" class="uploader-text">
+      <text>组别：类型四</text>
+    </navigator>
+  </view>
+</view>

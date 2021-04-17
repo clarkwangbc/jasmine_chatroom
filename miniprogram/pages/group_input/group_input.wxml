@@ -1,0 +1,10 @@
+<form bindsubmit='loginForm'>
+<view class="login-container">
+  <view class="title">团队沟通工具App</view>
+  <view class="login-box">
+    <label>请输入团队编号：</label>
+    <input name='groupID' placeholder="例如，0101"></input>   
+    <button formType="submit" type='primary' class="login-btn">加入群聊</button>
+  </view>
+</view>
+</form>
